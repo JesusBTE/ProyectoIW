@@ -714,3 +714,65 @@ nav {
 .container.active .toggle-right{
     transform: translateX(200%);
 } 
+/* Contenedor del slider */
+.slider-container {
+  position: relative;
+  width: 50%; /* Ajusta el ancho a tu preferencia */
+  margin: auto;
+  overflow: hidden;
+}
+
+/* Slider para mover las cartas */
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Estilo para cada carta */
+.card {
+  flex: 0 0 100%; /* Cada carta ocupa el 100% del contenedor */
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fadcc1;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-right: 10px; /* Espaciado entre cartas */
+}
+
+/* Imagen dentro de la carta, más pequeña */
+.card-image {
+  width: 80%; /* Tamaño reducido */
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Contenido de la carta */
+.card-content {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-text {
+  font-size: 1em;
+  color: #777;
+}
+
+/* Efecto cuando el cursor pasa sobre la carta */
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
+}

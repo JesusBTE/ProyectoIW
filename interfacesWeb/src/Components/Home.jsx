@@ -10,11 +10,11 @@ const Home = () => {
       <Navbar />
       <div className="home-banner-container">
         <div className="home-bannerImage-container">
-          <img src={BannerBackground} alt="" />
+          <img src={BannerBackground} alt="Fondo Banner" />
         </div>
         <div className="home-text-section">
           <h1 className="primary-heading">
-            "Descubre los Mejores Lugares para Comer en el Tec de Tepic" {" "}
+            "Descubre los Mejores Lugares para Comer en el Tec de Tepic"{" "}
             <GiTigerHead />
           </h1>
           <p className="primary-text">
@@ -23,11 +23,11 @@ const Home = () => {
             ¡Evita sorpresas y elige siempre lo mejor!"
           </p>
           <button className="secondary-button">
-          Explorar Lugares<FiArrowRight />{" "}
+            Explorar Lugares<FiArrowRight />{" "}
           </button>
         </div>
         <div className="home-image-section">
-          <img src={BannerImage} alt="" />
+          <img src={BannerImage} alt="Imagen Restaurante" />
         </div>
       </div>
     </div>

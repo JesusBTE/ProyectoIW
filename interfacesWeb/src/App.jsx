@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
+import Resena from "./Components/Resena"
 import About from "./Components/About";
 import Work from "./Components/Work";
 import Testimonial from "./Components/Testimonial";
@@ -22,6 +23,7 @@ function App() {
               <Home />
               <Work />
               <About />
+              <Resena/>
               <Testimonial />
               <Contact />
               <Footer />

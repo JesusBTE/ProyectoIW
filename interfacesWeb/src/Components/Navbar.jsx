@@ -51,7 +51,7 @@ const Navbar = () => {
       <div className="navbar-links-container">
         <a href="">Home</a>
         <a href="#about">Misión</a>
-        <a href="">Reseñas</a>
+        <a href="#resena">Reseñas</a>
         <a href="#contacto">Contactános</a>
         <Link to="/login">
         <button className="primary-button">Login</button>

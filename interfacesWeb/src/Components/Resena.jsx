@@ -5,7 +5,7 @@ const Resena = () => {
   return (
         <div className="about-section-container" id="resena">
             {/* Contenedor de cartas con espaciado entre ellas */}
-                <div className="col-md-4">
+                <div className="cards-container">
                   <Cards />
                 </div>
             {/* Contenedor de cartas con espaciado entre ellas */}

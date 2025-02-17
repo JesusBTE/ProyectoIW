@@ -714,65 +714,61 @@ nav {
 .container.active .toggle-right{
     transform: translateX(200%);
 } 
-/* Contenedor del slider */
-.slider-container {
-  position: relative;
-  width: 50%; /* Ajusta el ancho a tu preferencia */
-  margin: auto;
-  overflow: hidden;
+/* Contenedor de cartas */
+.cards-container {
+  display: grid; /* Usamos grid para distribuir las tarjetas */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 50px;
+  justify-items: center; /* Centra las tarjetas dentro del grid */
+  justify-content: center; /* Centra las columnas del grid cuando hay espacio sobrante */
+  max-width: 1200px; /* Limita el ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor en la página */
 }
 
-/* Slider para mover las cartas */
-.slider {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
 
-/* Estilo para cada carta */
 .card {
-  flex: 0 0 100%; /* Cada carta ocupa el 100% del contenedor */
-  box-sizing: border-box;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fadcc1;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  margin-right: 10px; /* Espaciado entre cartas */
-}
-
-/* Imagen dentro de la carta, más pequeña */
-.card-image {
-  width: 80%; /* Tamaño reducido */
-  height: auto;
+  background-color: #fff;
   border-radius: 8px;
-  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   transition: transform 0.3s ease;
+  justify-content: center;
 }
 
-/* Contenido de la carta */
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
 .card-content {
-  text-align: center;
+  padding: 15px;
 }
 
 .card-title {
-  font-size: 1.5em;
+  font-size: 1.25rem;
   margin-bottom: 10px;
-  color: #333;
 }
 
 .card-text {
-  font-size: 1em;
-  color: #777;
+  font-size: 1rem;
+  color: #555;
+}
+.btn-ver-mas {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-/* Efecto cuando el cursor pasa sobre la carta */
-.card:hover {
-  transform: scale(1.05);
-}
-
-.card:hover .card-image {
-  transform: scale(1.05);
+.btn-ver-mas:hover {
+  background-color: #0056b3;
 }

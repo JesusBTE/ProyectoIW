@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "../App.css";
+import "../Login.css";
 
 export default function Login() {
   useEffect(() => {

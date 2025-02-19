@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import Logo from "../Assets/Logo.svg";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
@@ -16,7 +16,6 @@ import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import { Link } from "react-router-dom";
 
-
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const menuOptions = [
@@ -27,7 +26,7 @@ const Navbar = () => {
     {
       text: "Misión",
       icon: <InfoIcon />,
-      link: "#about"
+      link: "#about",
     },
     {
       text: "Testimonials",
@@ -54,8 +53,8 @@ const Navbar = () => {
         <a href="#resena">Reseñas</a>
         <a href="#contacto">Contactános</a>
         <Link to="/login">
-        <button className="primary-button">Login</button>
-      </Link>
+          <button className="primary-button">Login</button>
+        </Link>
       </div>
       <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />

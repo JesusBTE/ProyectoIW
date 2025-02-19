@@ -1,15 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
-import Resena from "./Components/Resena"
 import About from "./Components/About";
 import Work from "./Components/Work";
 import Testimonial from "./Components/Testimonial";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import Login from "./Components/Login";
-import Navbar from "./Components/Navbar"; 
-import './app.css'
-
+import Navbar from "./Components/Navbar";
+import Carrusel from "./Components/Carrusel";
+import "./app.css";
 
 function App() {
   return (
@@ -23,19 +22,15 @@ function App() {
               <Home />
               <Work />
               <About />
-              <Resena/>
               <Testimonial />
               <Contact />
               <Footer />
             </>
           }
         />
-        <Route path="/login" element={
-          <>
-          <Login />
-  
-          </>
-      } />
+        <Route path="/login" element={<Login />} />
+        <Route path="/Carrusel" element={<Carrusel />} />{" "}
+        {/* Cambiado de component a element */}
       </Routes>
     </Router>
   );

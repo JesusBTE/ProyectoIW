@@ -104,6 +104,19 @@
   transform: scale(1.05);
 }
 
+/* Transición suave de desplazamiento */
+.carousel-item {
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+  opacity: 0;
+  transform: translateX(-100%); /* Inicia fuera de la pantalla, a la izquierda */
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transform: translateX(0); /* Se desliza a su posición normal */
+}
+
+
 /* Garantizar que las imágenes se recorten adecuadamente */
 .carousel-inner img {
   max-height: 400px;

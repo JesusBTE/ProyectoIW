@@ -1,37 +1,37 @@
 import Logo from "../Assets/Logo.svg";
-import { BsTwitter } from "react-icons/bs";
-import { FaFacebookF } from "react-icons/fa";
-import PrivacyPolicyModal from "./Privacy"
-import TermsAndConditionsModal from "./TermsAndConditions"
-import { IoLogoInstagram } from "react-icons/io5";
-
-
+import PrivacyPolicyModal from "./Privacy";
+import TermsAndConditionsModal from "./TermsAndConditions";
+import "../Style/Footer.css";
 
 const Footer = () => {
   return (
-    <div className="footer-wrapper">
-      <div className="footer-section-one">
-        <div className="footer-logo-container">
-          <img src={Logo} alt="" />
-        </div>
-        <div className="footer-icons">
-          <BsTwitter />
-          <FaFacebookF />
-          <IoLogoInstagram />
-        </div>
-      </div>
-      <div className="footer-section-two">
-        <div className="footer-section-columns">
-          <a href="https://www.tepic.tecnm.mx/">ITTepic</a>
-          <a href="#about">Misión</a>
-          <a href="#contacto">Contactános</a>
-        </div>
-        <div className="footer-section-columns">
-          <TermsAndConditionsModal />
-          <PrivacyPolicyModal />
+    <footer className="footer-wrapper py-3">
+      <div className="container-fluid">
+        <div className="row align-items-center footer-section-one">
+          {/* Columna izquierda: Logo */}
+          <div className="col-md-4 text-start">
+            <img src={Logo} alt="Logo" className="img-fluid" />
           </div>
+          {/* Columna central: Enlaces */}
+          <div className="col-md-4 text-center footer-section-columns">
+            <a href="https://www.tepic.tecnm.mx/" className="footer-link mx-2">
+              ITTepic
+            </a>
+            <a href="#about" className="footer-link mx-2">
+              Misión
+            </a>
+            <a href="#contacto" className="footer-link mx-2">
+              Contáctanos
+            </a>
+          </div>
+          {/* Columna derecha: Modales */}
+          <div className="col-md-4 text-end">
+            <TermsAndConditionsModal />
+            <PrivacyPolicyModal />
+          </div>
+        </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

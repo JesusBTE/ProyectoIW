@@ -7,8 +7,9 @@
   border: none;
   cursor: pointer;
   margin-top: 10px;
-  width: 95%; /* Hace que el botón ocupe casi todo el ancho */
+  width: 50%; /* Hace que el botón ocupe casi todo el ancho */
   transition: background-color 0.3s ease;
+  font-size: 0.8rem;
 }
 
 .open-modal-btn:hover {
@@ -66,4 +67,27 @@
 
 .close-modal-btn:hover {
   background-color: #e48f0f;
+}
+
+@media (max-width: 768px) {
+  .open-modal-btn {
+    width: 100%; /* Ocupar todo el ancho disponible */
+    max-width: 300px; /* Evitar que sea demasiado grande */
+    text-align: center;
+    display: block;
+    margin: 10px auto; /* Centrar el botón */
+  }
+
+  .modal-content {
+    width: 90%; /* Hacer que el modal se ajuste mejor en móviles */
+    max-width: 400px;
+    padding: 15px;
+  }
+
+  .close-modal-btn {
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    margin: 10px auto;
+  }
 }

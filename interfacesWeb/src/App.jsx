@@ -6,6 +6,7 @@ import Testimonial from "./Components/Testimonial";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import Login from "./Components/Login";
+import Resena from "./Components/Resena";
 import Navbar from "./Components/Navbar";
 import Carrusel from "./Components/Carrusel";
 import "./app.css";
@@ -29,6 +30,7 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/resena" element={<Resena />} />
         <Route path="/Carrusel" element={<Carrusel />} />{" "}
         {/* Cambiado de component a element */}
       </Routes>

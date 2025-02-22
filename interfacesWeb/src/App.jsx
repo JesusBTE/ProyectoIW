@@ -8,8 +8,10 @@ import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import Login from "./Components/Login";
 import Navbar from "./Components/Navbar"; 
+import Register from "./Components/Register.jsx";
+import AlertComponent from "./Components/AlertComponent.jsx"
 import './app.css'
-
+import { Alert } from "@mui/material";
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
         <Route path="/login" element={
           <>
           <Login />
+          <Register/>
+          <AlertComponent/>
   
           </>
       } />

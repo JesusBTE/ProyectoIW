@@ -10,13 +10,11 @@ export default function Login() {
 
   return (
     <div>
-      <h2>Login</h2>
-      {"/Login"}
       {alertData && (
-        <AlertComponent 
-          message={alertData.message} 
-          icon={alertData.icon} 
-          redirectTo={alertData.redirectTo} 
+        <AlertComponent
+          message={alertData.message}
+          icon={alertData.icon}
+          redirectTo={alertData.redirectTo}
         />
       )}
     </div>

@@ -35,7 +35,6 @@ function App() {
         <Route path="/login" element={
           <>
           <Login />
-          <Register/>
           <AlertComponent/>
   
           </>

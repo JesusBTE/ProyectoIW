@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect(
-  "mongodb+srv://Gustavo:12345@clusterp.p1lgi.mongodb.net/FOODIE"
+  "mongodb://localhost:27017/FOODIE"
 );
 
 const db = mongoose.connection;

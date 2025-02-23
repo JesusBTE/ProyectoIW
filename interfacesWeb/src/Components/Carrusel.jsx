@@ -44,7 +44,7 @@ function Carousel() {
           <div className="carousel-item active">
             <img
               className="d-block w-100"
-              src="https://www.rednayarita.com/wp-content/uploads/2017/01/Loma42-1.jpg"
+              src="https://th.bing.com/th/id/OIP.3kcQIwVH2AgSdNsYsjmOKgHaEK?w=274&h=180&c=7&r=0&o=5&pid=1.7"
               alt="First slide"
             />
           </div>

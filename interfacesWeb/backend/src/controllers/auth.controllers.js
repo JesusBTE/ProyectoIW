@@ -31,11 +31,63 @@ export const register = async (req, res) => {
             updatedAt: userSaved.updatedAt
         });//Creamos esa nueva variable para que me devuelva al usuario con su fecha de creacion y edicion, ya que si hubieramos puesta ahi la variable newUser, solo devolveria los datos ingresados
     }catch(error){
-        console.log(error);
+        res.status(500).json({messgae: error.message});
     }
 
 };
 
-export const login = (req, res) => {
-    res.send('login');
+export const login = async (req, res) => {
+    const {email, password} = req.body;
+    
+    try{
+
+        //Buscar el usurio que quiere loguearse a ver si existe
+        const userFound = await User.findOne({email});
+
+        if(!userFound) return res.status(400).json({message: "Usuario no encontrado"});
+
+        //La funcion compare() devuelve un true o false, entonces comparamos las contraseñas a ver si coinciden
+        const isMatch = await bcrypt.compare(password, userFound.password);
+
+        if(!isMatch) return res.status(400).json({message: "Contraseña incorrecta"})
+
+        const token = await createAccessToken({id: userFound._id});
+
+        res.cookie('token', token);
+        //res.json({ message : "Usuario creado satisfactoriamente"});
+        
+        res.json({
+            id: userFound._id,
+            username: userFound.username,
+            email: userFound.email,
+            createdAt: userFound.createdAt,
+            updatedAt: userFound.updatedAt
+        });//Creamos esa nueva variable para que me devuelva al usuario con su fecha de creacion y edicion, ya que si hubieramos puesta ahi la variable newUser, solo devolveria los datos ingresados
+    }catch(error){
+        res.status(500).json({messgae: error.message});
+    }
+
 };
+
+export const logout = (req, res) => {
+    //Aqui lo quie estamos haciendo es que vuelve nulo el token, y para poder loguearte se necesita token, por ende es como si se cerrara la sesión
+    res.cookie('token', "", {
+        expires: new Date(0)
+    });
+    return res.sendStatus(200);
+};
+
+export const profile = async (req, res) => {
+    const userFound = await User.findById(req.user.id);
+
+    if(!userFound) return res.status(400).json({message: "Usuario no encontrado"});
+    
+    return res.json({
+        id: userFound._id,
+        username: userFound.username,
+        email: userFound.email,
+        createdAt: userFound.createdAt,
+        updatedAt: userFound.updatedAt
+    });
+
+}

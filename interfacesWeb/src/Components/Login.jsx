@@ -1,7 +1,13 @@
 import { useEffect } from "react";
+import {useForm} from 'react-hook-form';//Importamos esto para hacer algunas validaciones
 import "../Login.css";
+import { registerRequest } from "../api/auth.js";
+
 
 export default function Login() {
+
+  const {register, handleSubmit} = useForm();
+
   useEffect(() => {
     const container = document.getElementById("container");
     const registerBtn = document.getElementById("register");
@@ -41,11 +47,16 @@ export default function Login() {
         </div>
 
         <div className="form-container sign-up">
-          <form>
+          <form onSubmit={
+              handleSubmit(async (values) =>{
+                console.log(values);
+                const res = await registerRequest(values);
+                console.log(res);
+            })}>
             <h1>Crear Cuenta</h1>
-            <input type="text" placeholder="Nombre" />
-            <input type="email" placeholder="Correo Electrónico" />
-            <input type="password" placeholder="Contraseña" />
+            <input type="text" {...register("username", {required:true})} placeholder="Nombre" />
+            <input type="email" {...register('email', {required:true})} placeholder="Correo Electrónico" />
+            <input type="password" {...register('password', {required:true})} placeholder="Contraseña" />
             <button type="submit">Registrarse</button>
           </form>
         </div>

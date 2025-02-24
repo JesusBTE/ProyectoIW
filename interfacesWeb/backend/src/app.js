@@ -11,14 +11,21 @@
 //Instalamos un modulo de node "npm i bcrypt js" el cual nos sirve para poder hashear la contraseña y que se guarde encriptada en la bd
 //Para poder crear un token para verificar el inicio de sesión, instalamos el modulo "npm i jsonwebtoken"
 //Instalamos "npm i cookie-parser" para las cookies poderlas convertir en un objeto JSON
+//Instalamos el modulo zod "npm i zod" este es una modulo el cual ya cuenta con muchas validaciones y nos ayudara a validar los datos enviados al back
+//Instalamos cors "npm i cors" el cual nos sirve para solucionar el problema entre los diferentes puertos que tienen el back y el front, ya que el front tiene el 5173 y el back el 4000
 import express from 'express';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 
 import authRoutes from './routes/auth.routes.js'
 
 const app = express();//Este es el servidor
 
+//app.use(cors()); //Esto es como decirle que todos los dominios se puedan comunicar. Se puede dejar solo asi o ser mas especifico de la siguiente manera:
+app.use(cors({
+    origin: 'http://localhost:5173'
+}));
 app.use(morgan('dev'));
 app.use(express.json());//Esto es para que pueda convertir los req.body en  objetos JSON
 app.use(cookieParser());

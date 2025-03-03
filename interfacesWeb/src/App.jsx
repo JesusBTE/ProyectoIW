@@ -9,6 +9,7 @@ import Login from "./Components/Login";
 import Resena from "./Components/Resena";
 import Navbar from "./Components/Navbar";
 import Carrusel from "./Components/Carrusel";
+import ProfileEditor from "./Components/ProfileEditor";
 import "./app.css";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/resena" element={<Resena />} />
+        <Route path="/profileEditor" element={<ProfileEditor />} />
         <Route path="/Carrusel" element={<Carrusel />} />{" "}
         {/* Cambiado de component a element */}
       </Routes>

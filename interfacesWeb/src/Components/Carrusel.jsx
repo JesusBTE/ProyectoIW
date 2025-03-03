@@ -3,6 +3,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "../Style/CarouselStyles.css";
+import bandera from "../Assets/ubicacion.png";
+
+<img
+  height="40px"
+  width="40px"
+  src={bandera}
+  alt="Ubicación"
+  className="icon"
+/>;
 
 function Carousel() {
   const [comments, setComments] = useState([]);
@@ -93,43 +102,61 @@ function Carousel() {
       <div className="content-container mt-4 p-4">
         <div className="row">
           {/* Descripción */}
-          <div className="col-md-6 description">
+          <div className="col-md-6 description text-start">
             <h3>Descripción</h3>
             <div className="user-info">
-              <div>
-                <p>
-                  <img
-                    height="40px"
-                    width="40px"
-                    src="https://img.icons8.com/ios7/512/FFFFFF/google-maps-new.png"
-                    alt="Ubicación"
-                  />
-                  Ubicado en: <strong>Escobedo 199</strong>
-                </p>
-                <p>
-                  <img
-                    height="40px"
-                    width="40px"
-                    src="https://img.icons8.com/ios7/600/FFFFFF/clock.png"
-                    alt="Horario"
-                  />
-                  Horario: <strong>9:00 AM - 8:00 PM</strong>
-                </p>
-                <p>
-                  <img
-                    height="40px"
-                    width="40px"
-                    src="https://img.icons8.com/ios_filled/512/FFFFFF/whatsapp--v2.png"
-                    alt="Teléfono"
-                  />
-                  Teléfono: <strong>+52 3891083922</strong>
-                </p>
+              <div className="row">
+                <div className="col-md-6">
+                  <p className="icon-text">
+                    <img
+                      height="40px"
+                      width="40px"
+                      src={bandera}
+                      alt="Ubicación"
+                      className="icon"
+                    />
+                    <strong>Escobedo 199</strong>
+                  </p>
+                  <p className="icon-text">
+                    <img
+                      height="40px"
+                      width="40px"
+                      src="https://img.icons8.com/ios-filled/512/FFFFFF/clock.png"
+                      alt="Horario"
+                      className="icon"
+                    />
+                    <strong>9:00 AM - 8:00 PM</strong>
+                  </p>
+                </div>
+                <div className="col-md-6">
+                  <p className="icon-text">
+                    <img
+                      height="40px"
+                      width="40px"
+                      src="https://img.icons8.com/ios-filled/512/FFFFFF/phone.png"
+                      alt="Teléfono"
+                      className="icon"
+                    />
+                    <strong>+52 3891083922</strong>
+                  </p>
+                  <p className="icon-text">
+                    <img
+                      height="40px"
+                      width="40px"
+                      src="https://img.icons8.com/ios-filled/512/FFFFFF/star.png"
+                      alt="Calificación"
+                      className="icon"
+                    />
+                    <strong>4.5</strong>
+                  </p>
+                </div>
               </div>
             </div>
+            <button className="btn btn-primary mt-3">Ver Menú</button>
           </div>
 
           {/* Sección de comentarios */}
-          <div className="col-md-6 comments">
+          <div className="col-md-6 comments text-start">
             <h3>Comentarios</h3>
             <div className="comments-container">
               <ul className="list-group">

@@ -108,14 +108,15 @@
 .carousel-item {
   transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
   opacity: 0;
-  transform: translateX(-100%); /* Inicia fuera de la pantalla, a la izquierda */
+  transform: translateX(
+    -100%
+  ); /* Inicia fuera de la pantalla, a la izquierda */
 }
 
 .carousel-item.active {
   opacity: 1;
   transform: translateX(0); /* Se desliza a su posición normal */
 }
-
 
 /* Garantizar que las imágenes se recorten adecuadamente */
 .carousel-inner img {
@@ -224,4 +225,16 @@ h5 {
 /* Separación para que el carrusel no se vea pegado a la barra de navegación */
 .container mt-4 {
   margin-top: 300px; /* Ajusta el valor según necesites */
+}
+
+.icon-text {
+  display: flex;
+  align-items: center; /* Alinear icono y texto */
+  gap: 10px; /* Espacio entre el icono y el texto */
+  margin-bottom: 25px; /* Espacio entre cada elemento */
+  margin-bottom: 25px;
+  word-wrap: break-word; /* Asegura que las palabras largas se dividan correctamente */
+
+  padding-bottom: 25px;
+  width: 100%;
 }

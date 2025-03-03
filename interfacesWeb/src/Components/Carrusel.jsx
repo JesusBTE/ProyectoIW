@@ -67,7 +67,7 @@ function Carousel() {
           <div className="carousel-item">
             <img
               className="d-block w-100"
-              src="https://www.rednayarita.com/wp-content/uploads/2017/01/Loma42-3.jpg"
+              src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/03/f0/91/2f/el-quincho.jpg?w=600&h=-1&s=1"
               alt="Third slide"
             />
           </div>
@@ -154,7 +154,6 @@ function Carousel() {
             </div>
             <button className="btn btn-primary mt-3">Ver Menú</button>
           </div>
-
           {/* Sección de comentarios */}
           <div className="col-md-6 comments text-start">
             <h3>Comentarios</h3>
@@ -165,15 +164,46 @@ function Carousel() {
                 ) : (
                   comments.map((c, index) => (
                     <li key={index} className="list-group-item comment-item">
-                      {[...Array(c.rating)].map((_, i) => (
+                      {/* Contenedor de estrellas y foto en la misma línea */}
+                      <div className="d-flex align-items-center">
+                        {/* Contenedor de estrellas */}
+                        <div
+                          className="stars-container d-flex"
+                          style={{ marginRight: "10px" }}
+                        >
+                          {[...Array(5)].map((_, i) => (
+                            <img
+                              key={i}
+                              src={
+                                i < c.rating
+                                  ? "https://img.icons8.com/ios-filled/50/FFD700/star.png" // Estrella llena
+                                  : "https://img.icons8.com/ios/50/000000/star.png" // Estrella vacía
+                              }
+                              alt="Star"
+                              className="star-icon"
+                              style={{ width: "20px", height: "20px" }} // Asegurando que las estrellas tengan un tamaño fijo
+                            />
+                          ))}
+                        </div>
+                        {/* Foto del usuario a la derecha */}
                         <img
-                          key={i}
-                          src="https://img.icons8.com/ios-filled/50/FFD700/star.png"
-                          alt="Star"
-                          className="star-icon"
+                          src="https://www.w3schools.com/w3images/avatar2.png" // Imagen falsa de usuario
+                          alt="Usuario"
+                          className="user-photo"
+                          style={{
+                            width: "40px",
+                            height: "40px",
+                            borderRadius: "50%",
+                          }}
                         />
-                      ))}
-                      <span className="comment-text">{` - ${c.text}`}</span>
+                      </div>
+                      {/* Texto del comentario debajo de las estrellas y foto */}
+                      <div
+                        className="comment-text mt-2"
+                        style={{ marginLeft: "50px" }}
+                      >
+                        {c.text}
+                      </div>
                     </li>
                   ))
                 )}
@@ -203,6 +233,7 @@ function Carousel() {
                       alt="Star"
                       onClick={() => setRating(num)}
                       className="star-icon"
+                      style={{ width: "20px", height: "20px" }}
                     />
                   ))}
                 </div>

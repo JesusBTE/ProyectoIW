@@ -154,8 +154,8 @@ h5 {
 
 /* Estilos para cada elemento de comentario */
 .comment-item {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: none;
+  background-color: #fff; /* Fondo blanco para cada comentario */
+  border: 1px solid #ddd; /* Borde gris claro */
   margin-bottom: 10px;
   border-radius: 5px;
   padding: 10px;

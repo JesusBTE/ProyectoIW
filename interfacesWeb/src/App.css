@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -228,13 +228,12 @@ nav {
 }
 .footer-icons svg {
   font-size: 1.5rem;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   color: #585858;
 }
- .footer-section-one {
+.footer-section-one {
   margin-left: 5rem;
-
-} 
+}
 .footer-section-two {
   flex: 1;
   display: flex;
@@ -245,10 +244,10 @@ nav {
   flex-direction: column;
   width: 190px;
   align-items: flex-start; /* Alinea el contenido a la izquierda */
-  margin-left: -20px; 
+  margin-left: -20px;
 }
 .footer-section-columns .open-modal-btn {
-  width: 190px; 
+  width: 190px;
   margin-left: -30px;
 }
 
@@ -466,14 +465,13 @@ nav {
   height: 250px;
   border-radius: 50%; /* Hace la imagen circular */
   object-fit: cover; /* Asegura que la imagen se recorte correctamente */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .testimonial-section-bottom img:hover {
   transform: scale(1.1); /* Hace que la imagen se agrande un poco */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Agrega un efecto de sombra */
 }
-
 
 .work-section-info:hover {
   transform: scale(1.1); /* Hace que la imagen se agrande un poco */
@@ -485,17 +483,22 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; 
+  z-index: 1000;
   background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
-.navbar-links-container a:hover {
-  color: #fe9e0d;
-  transition: color 0.3s ease, transform 0.3s ease; 
-  font-weight: 500;
-  font-size: 1.2rem;
-  text-decoration: underline 3px; 
+  .navbar-links-container a:hover {
+    color: #fe9e0d;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-decoration: underline 3px;
+  }
 }
 
+.active-link {
+  color: #fe9e0d; /* Color destacado */
+  font-weight: bold;
+  border-bottom: 2px solid #fe9e0d; /* Línea inferior */
+  padding-bottom: 2px;
 }
-
